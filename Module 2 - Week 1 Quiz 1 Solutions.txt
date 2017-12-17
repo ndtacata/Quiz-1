@@ -1,0 +1,52 @@
+11)
+
+names(data)
+
+12)
+
+data_frst2rws <- data[c(1:2), ]
+data_frst2rws
+
+13)
+
+nrow(data)
+
+14)
+
+tail(data, 2)
+
+15)
+
+data[47, "Ozone"]
+
+16)
+
+data_Ozone <- data[, "Ozone"]
+bad <- is.na(data_Ozone)
+nas_Ozone <- data_Ozone[bad]
+length(nas_Ozone)
+
+17)
+data_Ozone <- data[, "Ozone"]
+bad <- is.na(data_Ozone)
+data_Ozone <- data_Ozone[!bad]
+mean(data_Ozone)
+
+18)
+
+data_temp <- data[data$Ozone > 31 & data$Temp > 90, "Solar.R"]
+bad <- is.na(data_temp)
+data_fin <- data_temp[!bad]
+mean(data_fin)
+
+19)
+
+data_temp <- data[data$Month == 6, c("Temp", "Month")]
+mean(data_temp$Temp)
+
+20)
+
+data_ozone <- data[data$Month == 5, "Ozone"]
+bad <- is.na(data_ozone)
+good <- data_ozone[!bad]
+max(good)
